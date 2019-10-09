@@ -106,12 +106,88 @@ class Repartidor():
         self.placa = placa
 
 class Usuario():
-    def __init__(self, username, contraseña, cod_confirmacion, nombre_usuario, apellido_usuario, correo, num_telefonico, fecha_nac):
+    def __init__(self, username, contraseña, correo, telefono, direccion):
         self.username = username
         self.contraseña = contraseña
-        self.cod_confirmacion = cod_confirmacion
-        self.nombre_usuario = nombre_usuario
-        self.apellido_usuario = apellido_usuario
         self.correo = correo
-        self.num_telefonico = num_telefonico
-        self.fecha_nac = fecha_nac
+        self.telefono = telefono
+        self.direccion = direccion 
+        
+
+    def get_username(self):
+        return self.username
+    def set_username(self, username):
+        self.username = username
+    
+    def get_contraseña(self):
+        return self.contraseña
+    def set_contraseña(self, contraseña):
+        self.contraseña = contraseña
+             
+    def get_correo(self):
+        return self.correo
+    def set_correo(self):
+        self.correo = correo 
+
+    def set_telefono(self):
+        return self.telefono
+    def get_telefono(self, telefono):
+        self.telefono = telefono
+
+class Persona():
+    def __init__(self, persona_nombre, persona_dni, edad):
+        self.persona_nombre = persona_nombre
+        self.persona_dni = persona_dni
+        self.edad = edad
+
+class Comercio():
+    def __init__(self, ID_comercio, nombre, email, direccion, distrito):
+        self.ID_comercio = ID_comercio
+        self.nombre = nombre 
+        self.email = email
+        self.direccion = direccion
+        self.distrito = distrito
+
+    def get_ID_comercio(self):
+        return self.ID_comercio
+    def set_ID_comercio(self, ID_comercio):
+        self.ID_comercio = ID_comercio
+    
+    def get_nombre(self):
+        return self.nombre
+    def set_nombre(self, nombre):
+        self.nombre = nombre
+    
+    def get_emai(self):
+        return self.email
+    def set_email(self, email):
+        self.email = email
+    
+    def get_direccion(self):
+        return self.direccion
+    def set_direccion(self, direccion):
+        self.direccion = direccion
+    
+    def get_distrito(self):
+        return self.distrito
+    def set_distrito(self, distrito):
+        self.distrito = distrito
+
+
+class Pago():
+    def __init__(self, ID_pago, metodo_pago ):
+        self.ID_pago = ID_pago
+        self.metodo_pago = metodo_pago
+
+    def get_ID_pago(self):
+        return self.ID_pago
+    def set_ID_pago(self, ID_pago):
+        self.ID_pago = ID_pago
+    
+    def get_metodo_pago(self):
+        return self.metodo_pago
+    def set_metodo_pago(self, metodo_pago):
+        self.metodo_pago = metodo_pago
+
+
+

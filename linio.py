@@ -1,13 +1,23 @@
 class Carrito():
-    def __init__(self, ID_carrito, cantidad, sub_total):
+    def __init__(self, ID_carrito, usuario, productos_carrito, cantidad):
         self.ID_carrito = ID_carrito
+        self.usuario = usuario
         self.cantidad = cantidad
-        self.sub_total = sub_total
-
+        
     def get_ID_carrito (self):
         return self.ID_carrito
     def set_ID_carrito(self, ID_carrito):
         self.ID_carrito = ID_carrito
+
+    def get_usuario(self):
+        return self.usuario
+    def set_usuario(self, usuario):
+        self.usuario = usuario
+
+    def get_productos_carrito(self):
+        return self.get_productos_carrito
+    def get_productos_carrito(self, productos_carrito):
+        self.productos_carrito = productos_carrito
 
     def get_cantidad(self):
         return cantidad
@@ -16,10 +26,11 @@ class Carrito():
 
 
 class Categoria():
-    def __init__(self, ID_categoria, nombre, descripcion):
+    def __init__(self, ID_categoria, nombre, descripcion, lista_producto):
         self.ID_categoria = ID_categoria
         self.nombre = nombre
         self.descripcion = descripcion
+        self.lista_producto = lista_producto
 
     def get_ID_categoria(self):
         return self.ID_categoria
@@ -35,55 +46,42 @@ class Categoria():
         return self.descripcion
     def set_descripcion(self, descripcion):
         self.descripcion = descripcion
+
+    def get_lista_producto(self):
+        return self.lista_producto
+    def set_lista_producto(self, lista_producto):
+        self.lista_producto = lista_producto
         
 
 class Pedido():
-    def __init__(self, ID_pedido, fecha, ID_cliente, ID_comercio, estado, ID_envio, ID_pago):
+    def __init__(self, ID_pedido, fecha_pedido, carrito, repartidor, pago):
         self.ID_pedido = ID_pedido
-        self.fecha = fecha
-        self.ID_cliente = ID_cliente
-        self.ID_comercio = ID_comercio
-        self.estado = estado
-        self.ID_envio = ID_envio
-        self.ID_pago = ID_pago
+        self.fecha_pedido = fecha_pedido
+        self.carrito = carrito       
+        self.repartidor = repartidor
+        self.pago = pago
 
     def get_ID_pedido(self):
         return self.ID_pedido
     def set_ID_categoria(self, ID_categoria):
         self.ID_pedido = ID_pedido
 
-    def get_fecha(self):
-        return self.fecha
-    def set_fecha(self, fecha):
-        self.fecha = fecha
+    def get_fecha_pedido(self):
+        return self.fecha_pedido
+    def set_fecha_pedido(self, fecha):
+        self.fecha_pedido = fecha_pedido
     
-    def get_ID_cliente(self):
+    def get_carrito(self):
         return self.ID_pedido
-    def set_ID_cliente(self, ID_cliente):
-        self.ID_cliente = ID_cliente
-
-    def get_ID_comercio(self):
-        return self.ID_comercio
-    def set_ID_comercio(self):
-        self.ID_comercio = ID_comercio
-
-    def get_estado(self):
-        return self.estado
-    def set_estado(self):
-        self.estado = estado
-
-    def get_ID_pedido(self):
-        return self.ID_pedido
-    def set_ID_pedido(self):
-        self.ID_pedido = ID_pedido
+    def set_carrito(self, carrito):
+        self.carrito = carrito
     
-    def get_ID_pago(self):
-        return self.ID_pago
-    def set_ID_pago(self):
-        self.ID_pago = ID_pago
+    def get_pago(self):
+        return self.pago
+    def set_ago(self, pago):
+        self.pago = pago
 
 
-        
 class Repartidor():
     def __init__(self, ID_repartidor, nombre_repartidor, placa):
         self.ID_repartidor = ID_repartidor
@@ -105,15 +103,37 @@ class Repartidor():
     def set_placa(self, placa):
         self.placa = placa
 
-class Usuario():
-    def __init__(self, username, contraseña, correo, telefono, direccion):
-        self.username = username
-        self.contraseña = contraseña
-        self.correo = correo
-        self.telefono = telefono
-        self.direccion = direccion 
-        
 
+class Persona():
+    def __init__(self, persona_nombre, persona_dni, edad):
+        self.persona_nombre = persona_nombre
+        self.persona_dni = persona_dni
+        self.edad = edad
+
+    def get_persona_nombre(self):
+        return self.persona_nombre
+    def set_persona_nombre(self, persona_nombre):
+        self.persona_nombre
+    
+    def get_persona_dni(self):
+        return self.persona_nombre
+    def set_persona_dni(self, persona_dni):
+        self.persona_dni = persona_dni
+    
+    def get_edad(self):
+        return self.edad
+    def set_edad(self, edad):
+        self.edad = edad
+
+
+class Usuario(Persona):
+    def __init__(self, username, contraseña, correo, telefono, direccion):
+        Persona.username = username
+        Persona.contraseña = contraseña
+        Persona.correo = correo
+        Persona.telefono = telefono
+        Persona.direccion = direccion 
+        
     def get_username(self):
         return self.username
     def set_username(self, username):
@@ -134,11 +154,6 @@ class Usuario():
     def get_telefono(self, telefono):
         self.telefono = telefono
 
-class Persona():
-    def __init__(self, persona_nombre, persona_dni, edad):
-        self.persona_nombre = persona_nombre
-        self.persona_dni = persona_dni
-        self.edad = edad
 
 class Comercio():
     def __init__(self, ID_comercio, nombre, email, direccion, distrito):
